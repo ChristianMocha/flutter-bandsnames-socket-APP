@@ -46,6 +46,8 @@ io.on('connection', client => {
 
     client.on('emitir-mensaje', ( payload ) => {
         // io.emit( 'nuevo-mensaje', payload ); //emitite a todos los clientes
+        // io.emit( 'nuevo-mensaje', payload ); //emitite a todos los clientes
+
         client.broadcast.emit( 'nuevo-mensaje', payload ); //emite a todos los clientes excepto al que lo envia
     });
 });
